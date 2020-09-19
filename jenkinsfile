@@ -1,8 +1,8 @@
 pipeline {
-    agent any
+    agent {Label 'dockernode'}
    stages {     
     stage('maven Install') {
-      agent ('label:dockernode')       
+      agent any      
        docker {          
          image 'maven:3.5.0'         
      }       
