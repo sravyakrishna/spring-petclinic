@@ -1,15 +1,16 @@
 pipeline {
-    agent {Label 'dockernode'}
-   stages {     
-    stage('maven Install') {
-      agent any      
-       docker {          
-         image 'maven:3.5.0'         
-     }       
-  }       
-  steps {
-       sh 'mvn clean package'
-       }
-     }
-   }
+    agent {label 'MASTER'}
+    stages {
+        stage('Source'){
+            steps {
+                git 'https://github.com/dummyrepos/spring-petclinic.git' 
+            }
+        }
+        stage('Package'){
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
  
