@@ -1,7 +1,7 @@
 pipeline {
     agent {label 'MASTER'}
     stages {
-        stage('Source'){
+        stage('Scmcheckout'){
             steps {
                 git 'https://github.com/dummyrepos/spring-petclinic.git' 
             }
