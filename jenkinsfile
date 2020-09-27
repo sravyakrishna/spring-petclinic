@@ -12,9 +12,9 @@ pipeline {
             }
         }
          stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t shivadeshapathi/spring-petclinic:latest .'
+         agent any
+          steps {
+          sh 'docker build -t shivadeshapathi/spring-petclinic:latest .'
       }
     }
    }
