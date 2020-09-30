@@ -8,15 +8,9 @@ pipeline {
         }
         stage('Package'){
             steps {
-                sh 'mvn package'
+                sh 'mvn packages'
             }
         }
-         stage('Docker Build') {
-         agent any
-          steps {
-          sh 'docker build -t shivadeshapathi/spring-petclinic:latest .'
-      }
-    }
-   }
+         
 }
  
